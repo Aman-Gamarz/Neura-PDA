@@ -70,4 +70,4 @@ This project is licensed under the **MIT License** – feel free to use and modi
 
 ---
 
-👨‍💻 Developed by **Aman Gamarz, Ashif, and Himanshu**
+👨‍💻 Developed by **Aman Gamarz, Ashif**
