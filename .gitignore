@@ -1,0 +1,44 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.so
+*.dll
+
+# Ignore virtual environment
+venv/
+env/
+*.venv/
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.bak
+*.cache/
+logs/
+*.sqlite3
+
+# Ignore compiled files
+dist/
+build/
+*.spec
+*.exe
+
+# Ignore PyInstaller output
+*.spec
+dist/
+build/
+*.app/
+*.dmg/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
