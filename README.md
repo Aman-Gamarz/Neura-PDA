@@ -40,7 +40,7 @@ Neura is an advanced **AI-powered Personal Digital Assistant (PDA)** designed to
 ### **1️⃣ Clone the Repository**
 
 ```sh
- git clone https://github.com/yourusername/neura.git](https://github.com/Aman-Gamarz/Neura-PDA.git
+ git clone https://github.com/Aman-Gamarz/Neura-PDA.git
  cd neura
 ```
 
