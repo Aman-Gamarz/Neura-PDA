@@ -1,5 +1,5 @@
 import speech
 
 def cleanup(app):
-  speech.stop()
+  # speech.stop()
   app.destroy()

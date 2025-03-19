@@ -64,5 +64,4 @@ listening_thread.start()
 
 # Run the Tkinter loop
 app.mainloop() # @type synchronous
-speech.stop()
 speech.speak("Okay I am closing now, meet you soon.")
