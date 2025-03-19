@@ -1,0 +1,1 @@
+# core of ai means ai will be here not to be altered

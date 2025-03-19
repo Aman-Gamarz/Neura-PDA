@@ -1,5 +1,7 @@
 import customtkinter as ctk
-import os
+import speech
+import session
+import threading
 # import tkinter as tk
 
 # Initialize Tkinter
@@ -31,8 +33,36 @@ label = ctk.CTkLabel(app, text="Hello! I am your PDA.", font=("Arial", 16))
 label.pack(pady=20)
 
 # Add a close button
-close_btn = ctk.CTkButton(app, text="Close", command=app.destroy)
+close_btn = ctk.CTkButton(app, text="Close", command=lambda: session.cleanup(app))
 close_btn.pack(pady=10)
 
+
+# Function to greet the user (runs in a thread)
+def greet():
+  speech.speak("Hello! I am your PDA; currently in development stage.")
+
+# Function to listen in the background
+def listen_continuously():
+  while True:
+    command = speech.recognize_speech()
+    if command:
+      label.configure(text=f"You said: {command}")  # Update GUI text
+      speech.speak(f"You said: {command}")
+
+      if "exit" in command.lower():
+        label.configure(text="Goodbye!")
+        speech.speak("Okay I am closing now, meet you soon.")
+        app.quit()
+        break  # Stop loop
+
+# Start greeting in a thread
+threading.Thread(target=greet, daemon=True).start()
+
+# Start listening in a separate thread
+listening_thread = threading.Thread(target=listen_continuously, daemon=True)
+listening_thread.start()
+
 # Run the Tkinter loop
-app.mainloop()
+app.mainloop() # @type synchronous
+speech.stop()
+speech.speak("Okay I am closing now, meet you soon.")
